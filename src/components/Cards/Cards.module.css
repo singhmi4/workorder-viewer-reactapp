@@ -12,9 +12,16 @@
 
 .image {
     width: 125px;
+    height: 125px;
 }
 
 .worker {
     display: flex;
     justify-content: space-evenly;
+}
+
+@media (max-width: 770px) {
+    .card {
+        margin: 2% 10% !important;
+    }
 }

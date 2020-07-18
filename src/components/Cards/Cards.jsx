@@ -19,7 +19,7 @@ const Cards = ( props ) => {
         <div className={styles.container}>
             <Grid container spacing={4} justify="center">
             {workOrders.map((order, i) => (
-                    <Grid key={i} item component={Card} xs={12} md={3} className={styles.card} >
+                    <Grid key={i} item component={Card} xs={12} md={4} className={styles.card} >
                         <CardContent className={styles.cardContent} >
                             <div classname={styles.workOrder} >
                                 <Typography variant="h5" gutterBottom>{order.workOrderName}</Typography>
