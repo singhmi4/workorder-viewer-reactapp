@@ -8,25 +8,24 @@ import { Cards, SearchInput, SortToggle } from './components';
 import styles from './App.module.css';
 
 class App extends React.Component {
-    
-    state= {
-        workOrders: {},
+    state = {
+        orders: {},
     }
 
     async componentDidMount() {
-        const fetchedWorkOrders = await fetchWorkOrders();
-        this.setState({ workOrders: fetchedWorkOrders });
+        const fetchedOrders = await fetchWorkOrders();
+        this.setState({ orders: fetchedOrders });
     }
 
     render() {
 
-        const { workOrders } = this.state;
+        const { orders } = this.state;
 
         return (
             <div className={styles.container}>
                 <SearchInput />
                 <SortToggle />
-                <Cards workOrder={workOrders} />
+                <Cards orders={orders} />
             </div>
         )
     }

@@ -5,8 +5,8 @@ const workOrderURL = 'https://www.hatchways.io/api/assessment/work_orders';
 export const fetchWorkOrders = async () => {
 
     try {
-        const { data } = await axios.get(workOrderURL);
-        return { data };
+        const { data: { orders } } = await axios.get(workOrderURL);
+        return { orders };
     } catch (error) {
         console.log(error);
     }
