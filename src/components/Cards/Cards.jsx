@@ -19,7 +19,7 @@ const Cards = ( {orders: { orders }} ) => {
                             <Typography variant="h5" gutterBottom>{name}</Typography>
                             <Typography variant="body2" color="textSecondary">{description}</Typography>
                             <Typography variant="h6">{workerId}</Typography>
-                            <Typography color="textSecondary">{new Date(deadline).toLocaleString()}</Typography>
+                            <Typography variant="overline" color="textSecondary">{new Date(deadline).toLocaleString()}</Typography>
                         </CardContent>
                     </Grid>
                 ))}
