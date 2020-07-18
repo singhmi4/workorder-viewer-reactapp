@@ -5,3 +5,16 @@
 .card {
     margin: 2% 2% !important;
 }
+
+.workOrder {
+    margin: 5% 2%;
+}
+
+.image {
+    width: 125px;
+}
+
+.worker {
+    display: flex;
+    justify-content: space-evenly;
+}

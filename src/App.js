@@ -9,11 +9,12 @@ import styles from './App.module.css';
 
 class App extends React.Component {
     state = {
-        orders: {},
+        orders: [],
     }
 
     async componentDidMount() {
         const fetchedOrders = await fetchWorkOrders();
+        // console.log(fetchedOrders);
         this.setState({ orders: fetchedOrders });
     }
 
