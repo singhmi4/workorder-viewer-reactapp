@@ -5,22 +5,18 @@ import styles from './Cards.module.css';
 
 const Cards = ( props ) => {
     
-    // if(!orders) {
-    //     return 'Loading...';
-    // }
+    if(!props.orders) {
+        return 'Loading...';
+    }
 
     const workOrders = props.orders;
-    console.log(typeof workOrders);
-
-    
-   
         
     return (
         <div className={styles.container}>
             <Grid container spacing={4} justify="center">
             {workOrders.map((order, i) => (
                     <Grid key={i} item component={Card} xs={12} md={4} className={styles.card} >
-                        <CardContent className={styles.cardContent} >
+                        <CardContent >
                             <div classname={styles.workOrder} >
                                 <Typography variant="h5" gutterBottom>{order.workOrderName}</Typography>
                                 <Typography variant="body2" color="textSecondary" gutterBottom>{order.description}</Typography>

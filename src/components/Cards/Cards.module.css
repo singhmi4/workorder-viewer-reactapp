@@ -13,6 +13,7 @@
 .image {
     width: 125px;
     height: 125px;
+    border-radius: 62.5px;
 }
 
 .worker {
