@@ -14,20 +14,23 @@ class App extends React.Component {
         sortByEarliest: true,
     }
 
+    // Fetch modified JSON from API and set it to the App component state
     async componentDidMount() {
         const fetchedOrders = await fetchWorkOrders();
         this.setState({ orders: fetchedOrders });
     }
    
+    // Sets the query state for searching in Cards component
     handleInputChange = (query) => {
-        
         this.setState({ query: query })
     }
 
+    // Sets the boolean value of the toggle switcher which will determine how the Cards should be sorted
     handleSortByChange = (checked) => {
         this.setState({ sortByEarliest: checked })
     } 
 
+    
     render() {
 
         const { orders, query, sortByEarliest } = this.state;
