@@ -21,7 +21,7 @@
     justify-content: space-evenly;
 }
 
-@media (max-width: 770px) {
+@media (max-width: 1280px) {
     .card {
         margin: 2% 10% !important;
     }

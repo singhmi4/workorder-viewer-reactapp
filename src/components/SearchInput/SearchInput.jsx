@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TextField } from '@material-ui/core';
 
 import styles from './SearchInput.module.css';
 
-const SearchInput = () => {
+const SearchInput = ({ handleInputChange })  => {
 
+       
     return (
-        <h1>SearchInput</h1>
+        <div className={styles.container} >
+            <TextField
+                className={styles.textField}
+                id="worker-search"
+                placeholder="Filter by worker name..."
+                fullWidth
+                margin="normal"
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                variant="outlined"
+                onChange={(event) => handleInputChange(event.target.value)}
+            />
+        </div>
     )
 }
 

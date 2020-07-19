@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
+import Fuse from 'fuse.js';
 
 import styles from './Cards.module.css';
 
@@ -10,14 +11,19 @@ const Cards = ( props ) => {
     }
 
     const workOrders = props.orders;
+    const query = props.query;
+
+    const fuse = new Fuse (workOrders, { keys: ['name'] });
+    const results = fuse.search(query);
+    const workOrderResults = query ? results.map(workOrder => workOrder.item) : workOrders;
         
     return (
         <div className={styles.container}>
             <Grid container spacing={4} justify="center">
-            {workOrders.map((order, i) => (
-                    <Grid key={i} item component={Card} xs={12} md={4} className={styles.card} >
+            {workOrderResults.map((order, i) => (
+                    <Grid key={i} item component={Card} md={12} lg={4} className={styles.card} >
                         <CardContent >
-                            <div classname={styles.workOrder} >
+                            <div className={styles.workOrder} >
                                 <Typography variant="h5" gutterBottom>{order.workOrderName}</Typography>
                                 <Typography variant="body2" color="textSecondary" gutterBottom>{order.description}</Typography>
                             </div>    

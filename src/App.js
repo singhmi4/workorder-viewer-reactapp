@@ -10,23 +10,28 @@ import styles from './App.module.css';
 class App extends React.Component {
     state = {
         orders: [],
+        query: '',
     }
 
     async componentDidMount() {
         const fetchedOrders = await fetchWorkOrders();
-        // console.log(fetchedOrders);
         this.setState({ orders: fetchedOrders });
+    }
+   
+    handleInputChange = (query) => {
+        
+        this.setState({ query: query })
     }
 
     render() {
 
-        const { orders } = this.state;
+        const { orders, query } = this.state;
 
         return (
             <div className={styles.container}>
-                <SearchInput />
+                <SearchInput handleInputChange={this.handleInputChange} />
                 <SortToggle />
-                <Cards orders={orders} />
+                <Cards orders={orders} query={query} />
             </div>
         )
     }
