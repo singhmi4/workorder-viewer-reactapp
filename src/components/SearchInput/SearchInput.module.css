@@ -1,7 +1,5 @@
 .container {
     margin: 10px 0;
+    width: 85%;
 }
 
-.textField {
-    width: 100% !important;
-}

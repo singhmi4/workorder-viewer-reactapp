@@ -10,11 +10,12 @@ const Cards = ( props ) => {
         return 'Loading...';
     }
 
+    // Order by Earliest or Latest
     const sortByEarliest = props.sortByEarliest;
-    console.log(sortByEarliest);
     const workOrders = sortByEarliest ? props.orders.sort((a, b) => b.deadline - a.deadline) : props.orders.sort((a, b) => a.deadline - b.deadline);
+    
+    // Search
     const query = props.query;
-
     const fuse = new Fuse (workOrders, { keys: ['name'] });
     const results = fuse.search(query);
     const workOrderResults = query ? results.map(workOrder => workOrder.item) : workOrders;
