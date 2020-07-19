@@ -1,3 +1,15 @@
+# Work Order Viewer App
+
+## Live Site
+
+https://inspiring-keller-212eca.netlify.app/
+
+## Technologies and Frameworks Used
+
+* React
+* FuseJS
+* MaterialUI
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
