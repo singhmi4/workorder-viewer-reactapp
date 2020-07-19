@@ -11,6 +11,7 @@ class App extends React.Component {
     state = {
         orders: [],
         query: '',
+        sortByEarliest: true,
     }
 
     async componentDidMount() {
@@ -23,15 +24,19 @@ class App extends React.Component {
         this.setState({ query: query })
     }
 
+    handleSortByChange = (checked) => {
+        this.setState({ sortByEarliest: checked })
+    } 
+
     render() {
 
-        const { orders, query } = this.state;
+        const { orders, query, sortByEarliest } = this.state;
 
         return (
             <div className={styles.container}>
                 <SearchInput handleInputChange={this.handleInputChange} />
-                <SortToggle />
-                <Cards orders={orders} query={query} />
+                <SortToggle handleSortByChange={this.handleSortByChange} />
+                <Cards orders={orders} query={query} sortByEarliest={sortByEarliest} />
             </div>
         )
     }

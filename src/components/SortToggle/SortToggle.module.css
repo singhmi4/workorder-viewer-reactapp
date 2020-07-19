@@ -1,3 +1,9 @@
 .container {
-    margin: 50px 0;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.switch {
+    margin: 0 10% !important;
 }

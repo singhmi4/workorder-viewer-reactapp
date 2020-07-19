@@ -10,7 +10,9 @@ const Cards = ( props ) => {
         return 'Loading...';
     }
 
-    const workOrders = props.orders;
+    const sortByEarliest = props.sortByEarliest;
+    console.log(sortByEarliest);
+    const workOrders = sortByEarliest ? props.orders.sort((a, b) => b.deadline - a.deadline) : props.orders.sort((a, b) => a.deadline - b.deadline);
     const query = props.query;
 
     const fuse = new Fuse (workOrders, { keys: ['name'] });
